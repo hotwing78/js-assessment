@@ -21,7 +21,7 @@ describe('functions', function() {
   });
 
   it('you should be able to change the context in which a function is called', function() {
-    var speak = function() {
+    var spread = function() {
       return sayIt(this.greeting, this.name, '!!!');
     };
     var obj = {
@@ -29,7 +29,7 @@ describe('functions', function() {
       name: 'Rebecca'
     };
 
-    var result = functionsAnswers.speak(speak, obj);
+    var result = functionsAnswers.speak(spread, obj);
     expect(result).to.eql('Hello, Rebecca!!!');
     expect(sayItCalled).to.be.ok;
   });
